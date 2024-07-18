@@ -8,7 +8,7 @@ COPY / /go/src/logzio
 WORKDIR /go/src/logzio
 
 
-FROM fluent/fluent-bit:3.0.4-arm64
+FROM fluent/fluent-bit:2.1.9-arm64
 
 COPY --from=gobuilder /go/src/logzio/build/out_logzio-linux-arm64.so /fluent-bit/bin/
 COPY --from=gobuilder /go/src/logzio/fluentbit/fluent-bit.conf /fluent-bit/etc/
