@@ -1,0 +1,22 @@
+name: Release to public ecr
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Make
+        run: sudo apt-get install make
+
+      - name: Login to Public ECR
+        run: make login
+
+      - name: Build, tag and push Docker image
+        run: make all IMAGE_TAG=${{ github.event.release.name }}-amd64
