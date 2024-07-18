@@ -1,6 +1,6 @@
 # Variables
 IMAGE_NAME = ecs-fluentbit-sidecar
-IMAGE_TAG = 1.0.2-amd64
+IMAGE_TAG = 1.0.7-amd64
 ECR_REGISTRY = public.ecr.aws/logzio
 AWS_REGION = us-east-1
 DOCKERFILE = Dockerfile
