@@ -1,0 +1,21 @@
+FROM golang:1.18.4 as gobuilder
+
+ENV GOOS=linux\
+    GOARCH=arm64
+
+RUN mkdir /go/src/logzio
+COPY / /go/src/logzio
+WORKDIR /go/src/logzio
+
+
+FROM fluent/fluent-bit:3.0.4-arm64
+
+COPY --from=gobuilder /go/src/logzio/build/out_logzio-linux-arm64.so /fluent-bit/bin/
+COPY --from=gobuilder /go/src/logzio/fluentbit/fluent-bit.conf /fluent-bit/etc/
+COPY --from=gobuilder /go/src/logzio/fluentbit/plugins-arm.conf /fluent-bit/etc/plugins.conf
+
+EXPOSE 2020
+
+CMD ["/fluent-bit/bin/fluent-bit", "--config", "/fluent-bit/etc/fluent-bit.conf"]
+
+
