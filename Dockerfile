@@ -13,6 +13,8 @@ FROM fluent/fluent-bit:2.1.9-amd64
 COPY --from=gobuilder /go/src/logzio/build/out_logzio-linux.so /fluent-bit/bin/
 COPY --from=gobuilder /go/src/logzio/fluentbit/fluent-bit.conf /fluent-bit/etc/
 COPY --from=gobuilder /go/src/logzio/fluentbit/plugins.conf /fluent-bit/etc/
+COPY --from=gobuilder /go/src/logzio/fluentbit/parsers.conf /fluent-bit/etc/
+
 
 EXPOSE 2020
 
