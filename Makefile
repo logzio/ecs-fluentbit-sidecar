@@ -10,7 +10,7 @@ all: login build tag push
 
 .PHONY: build
 build:
-	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) -f $(DOCKERFILE) .
+	docker build -t $(IMAGE_NAME):$(IMAGE_TAG) --platform linux/amd64 -f $(DOCKERFILE) .
 
 .PHONY: tag
 tag:
