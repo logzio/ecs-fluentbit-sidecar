@@ -7,7 +7,7 @@ To send logs from your ECS containers to Logz.io with fluentbit logging sidecar,
 ```json
 {
   "name": "log_router",
-  "image": "public.ecr.aws/logzio/ecs-fluentbit-sidecar:1.0.9-amd64",
+  "image": "public.ecr.aws/logzio/ecs-fluentbit-sidecar:1.1.0-amd64",
   "memoryReservation": 100,
   "portMappings": [],
   "essential": true,
@@ -49,8 +49,8 @@ To send logs from your ECS containers to Logz.io with fluentbit logging sidecar,
 ```
 The Fluent Bit image is stored in AWS Public ECR and contains the Logz.io output plugin.
 https://gallery.ecr.aws/logzio/ecs-fluentbit-sidecar
-- amd64: `public.ecr.aws/logzio/ecs-fluentbit-sidecar:1.0.9-amd64`
-- arm64: `public.ecr.aws/logzio/ecs-fluentbit-sidecar:1.0.9-arm64`
+- amd64: `public.ecr.aws/logzio/ecs-fluentbit-sidecar:1.1.0-amd64`
+- arm64: `public.ecr.aws/logzio/ecs-fluentbit-sidecar:1.1.0-arm64`
 
 Ensure you have a matching volume on your application container.
 
