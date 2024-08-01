@@ -15,6 +15,7 @@ COPY --from=gobuilder /go/src/logzio/fluentbit/fluent-bit.conf /fluent-bit/etc/
 COPY --from=gobuilder /go/src/logzio/fluentbit/plugins.conf /fluent-bit/etc/
 COPY --from=gobuilder /go/src/logzio/fluentbit/parsers.conf /fluent-bit/etc/
 
+USER nobody
 
 EXPOSE 2020
 
