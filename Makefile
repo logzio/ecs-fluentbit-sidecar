@@ -1,6 +1,6 @@
 # Variables
 IMAGE_NAME = ecs-fluentbit-sidecar
-IMAGE_TAG = 1.1.0
+IMAGE_TAG = test-version # Change this to the version you want to push, public versions are populated by GitHub Actions
 ECR_REGISTRY = public.ecr.aws/logzio
 AWS_REGION = us-east-1
 DOCKERFILE = Dockerfile
