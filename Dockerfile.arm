@@ -1,7 +1,8 @@
 FROM golang:1.22.5 as gobuilder
 
-ENV GOOS=linux\
-    GOARCH=arm64
+# Set environment variables
+ENV GOARCH=arm64
+ENV GOOS=linux
 
 RUN mkdir /go/src/logzio
 COPY / /go/src/logzio
